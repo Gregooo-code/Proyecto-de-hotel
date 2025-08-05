@@ -12,7 +12,7 @@ const eventsData = [
     time: "20:00 - 23:00",
     location: "Salón Principal",
     type: "Música",
-    icon: <Music className="w-6 h-6 text-orange-500" />,
+    icon: <Music className="w-6 h-6 text-[#F20C1F]" />,
     capacity: "80 personas",
     price: 35,
     dressCode: "Elegante casual",
@@ -33,7 +33,7 @@ const eventsData = [
     time: "21:00 - 23:30",
     location: "Jardines del Hotel",
     type: "Cine",
-    icon: <Film className="w-6 h-6 text-orange-500" />,
+    icon: <Film className="w-6 h-6 text-[#F20C1F]" />,
     capacity: "120 personas",
     price: 15,
     dressCode: "Informal",
@@ -54,7 +54,7 @@ const eventsData = [
     time: "19:30 - 22:00",
     location: "Bodega del Hotel",
     type: "Gastronomía",
-    icon: <Wine className="w-6 h-6 text-orange-500" />,
+    icon: <Wine className="w-6 h-6 text-[#F20C1F]" />,
     capacity: "25 personas",
     price: 60,
     dressCode: "Smart casual",
@@ -73,10 +73,10 @@ export const SpecialEventsSection = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-[#0D0D0D] mb-4">
             Eventos Especiales
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-[#0D0D0D]">
             No te pierdas los eventos exclusivos que hemos preparado para ti.
           </p>
         </div>
@@ -85,7 +85,7 @@ export const SpecialEventsSection = () => {
           {eventsData.map((event) => (
             <Card
               key={event.id}
-              className="shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+              className="shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full bg-white border border-gray-200"
             >
               <img
                 src={event.image}
@@ -93,64 +93,69 @@ export const SpecialEventsSection = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <CardContent className="p-6 flex flex-col flex-1">
+                {/* Título e ícono */}
                 <div className="flex items-center mb-3">
-                  <div className="p-2 bg-orange-100 rounded-full mr-3">
+                  <div className="p-2 bg-white rounded-full mr-3 border-2 border-[#F20C1F] shadow-sm">
                     {event.icon}
                   </div>
-                  <h3 className="font-bold text-gray-800 text-xl">
+                  <h3 className="font-bold text-[#0D0D0D] text-xl">
                     {event.name}
                   </h3>
                 </div>
-                
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+
+                {/* Descripción */}
+                <p className="text-sm text-[#0D0D0D] mb-3 line-clamp-2">
                   {event.description}
                 </p>
-                
+
+                {/* Detalles del evento */}
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4">
-                  <div className="flex items-center gap-1 text-gray-700">
-                    <CalendarCheck className="w-4 h-4 text-blue-500" />
+                  <div className="flex items-center gap-1 text-[#0D0D0D]">
+                    <CalendarCheck className="w-4 h-4 text-[#F20C1F]" />
                     <span>{event.date}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-700">
-                    <Clock className="w-4 h-4 text-purple-500" />
+                  <div className="flex items-center gap-1 text-[#0D0D0D]">
+                    <Clock className="w-4 h-4 text-[#F20C1F]" />
                     <span>{event.time}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-700">
-                    <Users className="w-4 h-4 text-green-500" />
+                  <div className="flex items-center gap-1 text-[#0D0D0D]">
+                    <Users className="w-4 h-4 text-[#F20C1F]" />
                     <span>{event.capacity}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-700">
-                    <Ticket className="w-4 h-4 text-yellow-500" />
+                  <div className="flex items-center gap-1 text-[#0D0D0D]">
+                    <Ticket className="w-4 h-4 text-[#F20C1F]" />
                     <span>${event.price} USD</span>
                   </div>
-                  <div className="col-span-2 flex items-center gap-1 text-gray-700">
-                    <MapPin className="w-4 h-4 text-red-500" />
+                  <div className="col-span-2 flex items-center gap-1 text-[#0D0D0D]">
+                    <MapPin className="w-4 h-4 text-[#F20C1F]" />
                     <span>{event.location}</span>
                   </div>
                 </div>
-                
+
+                {/* Destacados */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-800 text-sm mb-2">Destacados:</h4>
-                  <ul className="text-xs text-gray-600 space-y-1">
+                  <h4 className="font-semibold text-[#0D0D0D] text-sm mb-2">Destacados:</h4>
+                  <ul className="text-xs text-[#0D0D0D] space-y-1">
                     {event.highlights.slice(0, 3).map((item, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-orange-500 mr-1">•</span>
+                        <span className="text-[#F20C1F] mr-1">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
-                <div className="mt-auto pt-4 border-t">
+
+                {/* Etiquetas y botón */}
+                <div className="mt-auto pt-4 border-t border-gray-200">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-white text-[#0D0D0D] px-3 py-1 rounded-full border border-[#F20C1F] shadow-sm">
                       {event.dressCode}
                     </span>
-                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-white text-[#0D0D0D] px-3 py-1 rounded-full border border-[#F20C1F] shadow-sm">
                       {event.ageRestriction}
                     </span>
                   </div>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600">
+                  <Button className="w-full bg-[#F20C1F] hover:bg-[#F20C0C] text-white font-semibold transition-all duration-300 hover:shadow-md">
                     Reservar Ahora
                   </Button>
                 </div>

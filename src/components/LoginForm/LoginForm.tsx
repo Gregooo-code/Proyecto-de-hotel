@@ -23,23 +23,23 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100 flex items-center justify-center p-4">
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
       </div>
 
       <Card className="w-full max-w-md relative z-10 bg-white/80 backdrop-blur-sm border-0 shadow-2xl">
         <CardHeader className="text-center pb-2">
           {/* Logo/Ícono */}
-          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
             <Lock className="w-8 h-8 text-white" />
           </div>
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">
             Bienvenido de Nuevo
           </CardTitle>
-          <p className="text-gray-500 text-sm mt-2">
+          <p className="text-gray-600 text-sm mt-2">
             Ingresa tus credenciales para continuar
           </p>
         </CardHeader>
@@ -62,7 +62,7 @@ export const LoginForm = () => {
                   placeholder="tu@ejemplo.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 h-12 border-gray-200 focus:border-orange-500 focus:ring-orange-500 transition-colors"
+                  className="pl-10 h-12 border-gray-200 focus:border-yellow-400 focus:ring-yellow-400 transition-colors"
                   required
                 />
               </div>
@@ -84,7 +84,7 @@ export const LoginForm = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 pr-12 h-12 border-gray-200 focus:border-orange-500 focus:ring-orange-500 transition-colors"
+                  className="pl-10 pr-12 h-12 border-gray-200 focus:border-yellow-400 focus:ring-yellow-400 transition-colors"
                   required
                 />
                 <button
@@ -106,13 +106,13 @@ export const LoginForm = () => {
               <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  className="rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+                  className="rounded border-gray-300 text-red-600 focus:ring-red-500"
                 />
                 <span className="text-gray-600">Recordarme</span>
               </label>
               <a
                 href="#"
-                className="text-orange-500 hover:text-orange-600 hover:underline font-medium"
+                className="text-red-600 hover:text-yellow-500 hover:underline font-medium transition-colors"
               >
                 ¿Olvidaste tu contraseña?
               </a>
@@ -122,7 +122,7 @@ export const LoginForm = () => {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:opacity-70"
+              className="w-full h-12 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:opacity-70"
             >
               {isLoading ? (
                 <div className="flex items-center space-x-2">
@@ -154,7 +154,7 @@ export const LoginForm = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="h-11 border-gray-200 hover:bg-gray-50 transition-colors"
+                className="h-11 border-gray-200 hover:bg-yellow-50 hover:border-yellow-300 transition-colors"
               >
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path
@@ -179,7 +179,7 @@ export const LoginForm = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="h-11 border-gray-200 hover:bg-gray-50 transition-colors"
+                className="h-11 border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition-colors"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -197,7 +197,7 @@ export const LoginForm = () => {
               ¿No tienes una cuenta?{" "}
               <a
                 href="/register"
-                className="text-orange-500 hover:text-orange-600 font-semibold hover:underline transition-colors"
+                className="text-red-600 hover:text-yellow-500 font-semibold hover:underline transition-colors"
               >
                 Regístrate aquí
               </a>

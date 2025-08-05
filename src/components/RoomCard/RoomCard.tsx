@@ -213,7 +213,7 @@ export const RoomCard = ({
         </div>
 
         {/* Quick Info */}
-        <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-[#020659]">
+        <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-[#0D0D0D]">
           <span>Cancelación gratuita</span>
           <span>Sin prepago</span>
         </div>

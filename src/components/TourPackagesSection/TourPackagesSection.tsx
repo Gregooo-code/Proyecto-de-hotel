@@ -102,7 +102,7 @@ export const TourPackagesSection = () => {
           <h2 className="text-3xl font-bold text-[#0D0D0D] mb-4">
             Paquetes Turísticos
           </h2>
-          <p className="text-[#020659]">
+          <p className="text-[#0D0D0D]">
             Explora los destinos más fascinantes con nuestros paquetes todo incluido
           </p>
         </div>
@@ -132,7 +132,7 @@ export const TourPackagesSection = () => {
                   >
                     <Heart 
                       className={`w-4 h-4 transition-colors ${
-                        favorites[pkg.id] ? 'fill-[#F20C1F] text-[#F20C1F]' : 'text-[#020659]'
+                        favorites[pkg.id] ? 'fill-[#F20C1F] text-[#F20C1F]' : 'text-[#0D0D0D]'
                       }`} 
                     />
                   </button>
@@ -140,7 +140,7 @@ export const TourPackagesSection = () => {
                     onClick={(e) => e.stopPropagation()}
                     className="p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-colors duration-200 shadow-sm"
                   >
-                    <Share2 className="w-4 h-4 text-[#020659]" />
+                    <Share2 className="w-4 h-4 text-[#0D0D0D]" />
                   </button>
                 </div>
 
@@ -158,24 +158,24 @@ export const TourPackagesSection = () => {
                   </h3>
                 </div>
                 
-                <p className="text-sm text-[#020659] mb-4 line-clamp-2">
+                <p className="text-sm text-[#0D0D0D] mb-4 line-clamp-2">
                   {pkg.description}
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4">
-                  <div className="flex items-center gap-2 text-[#020659]">
+                  <div className="flex items-center gap-2 text-[#0D0D0D]">
                     <MapPin className="w-4 h-4 text-[#F20C0C]" />
                     <span>{pkg.location}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#020659]">
+                  <div className="flex items-center gap-2 text-[#0D0D0D]">
                     <Calendar className="w-4 h-4 text-[#F20C0C]" />
                     <span>{pkg.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#020659]">
+                  <div className="flex items-center gap-2 text-[#0D0D0D]">
                     <Users className="w-4 h-4 text-[#F20C0C]" />
                     <span>{pkg.groupSize}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#020659]">
+                  <div className="flex items-center gap-2 text-[#0D0D0D]">
                     <Sun className="w-4 h-4 text-[#F20C0C]" />
                     <span>{pkg.difficulty}</span>
                   </div>
@@ -183,7 +183,7 @@ export const TourPackagesSection = () => {
                 
                 <div className="mb-4">
                   <h4 className="font-semibold text-[#0D0D0D] text-sm mb-2">Incluye:</h4>
-                  <ul className="text-xs text-[#020659] space-y-1">
+                  <ul className="text-xs text-[#0D0D0D] space-y-1">
                     {pkg.inclusions.slice(0, 3).map((item, index) => (
                       <li key={index} className="flex items-start">
                         <span className="text-[#F20C1F] mr-1">•</span>
@@ -199,7 +199,7 @@ export const TourPackagesSection = () => {
                       <DollarSign className="w-4 h-4 mr-1" />
                       ${pkg.price} USD
                     </span>
-                    <span className="text-xs bg-[#020659]/10 text-[#020659] px-2 py-1 rounded-full">
+                    <span className="text-xs bg-[#020659]/10 text-[#0D0D0D] px-2 py-1 rounded-full">
                       {pkg.bestFor}
                     </span>
                   </div>
@@ -208,7 +208,7 @@ export const TourPackagesSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="flex-1 border-[#020659] text-[#020659] hover:bg-[#020659]/10 hover:border-[#020659] transition-colors group"
+                      className="flex-1 border-[#0D0D0D] text-[#0D0D0D] hover:bg-[#020659]/10 hover:border-[#0D0D0D] transition-colors group"
                     >
                       Ver Detalles
                     </Button>

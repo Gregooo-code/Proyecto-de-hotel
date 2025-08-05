@@ -37,7 +37,7 @@ export const ContactMainSection = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#020659] mb-4">
+          <h2 className="text-4xl font-bold text-[#0D0D0D] mb-4">
             Ponte en Contacto
           </h2>
           <p className="text-lg text-[#0D0D0D]">
@@ -48,7 +48,7 @@ export const ContactMainSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
           {/* Left Column: Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-[#020659] mb-6">
+            <h3 className="text-2xl font-bold text-[#0D0D0D] mb-6">
               Envíanos un Mensaje
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,7 +119,7 @@ export const ContactMainSection = () => {
 
           {/* Right Column: Location Details & Map */}
           <div>
-            <h3 className="text-2xl font-bold text-[#020659] mb-6">
+            <h3 className="text-2xl font-bold text-[#0D0D0D] mb-6">
               Nuestra Ubicación
             </h3>
 
@@ -127,7 +127,7 @@ export const ContactMainSection = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-[#F20C1F] flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-[#020659] text-lg">
+                  <h4 className="font-semibold text-[#0D0D0D] text-lg">
                     Dirección
                   </h4>
                   <p className="text-[#0D0D0D]">
@@ -138,7 +138,7 @@ export const ContactMainSection = () => {
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-[#F20C1F] flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-[#020659] text-lg">
+                  <h4 className="font-semibold text-[#0D0D0D] text-lg">
                     Teléfono
                   </h4>
                   <p className="text-[#0D0D0D]">+1 (555) 123-4567</p>
@@ -147,7 +147,7 @@ export const ContactMainSection = () => {
               <div className="flex items-start gap-4">
                 <Mail className="w-6 h-6 text-[#F20C1F] flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-[#020659] text-lg">
+                  <h4 className="font-semibold text-[#0D0D0D] text-lg">
                     Correo Electrónico
                   </h4>
                   <p className="text-[#0D0D0D]">info@bookmehotel.com</p>
@@ -155,7 +155,7 @@ export const ContactMainSection = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-[#020659] mb-6">
+            <h3 className="text-2xl font-bold text-[#0D0D0D] mb-6">
               Ubicación en el Mapa
             </h3>
             <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-md border border-gray-200">

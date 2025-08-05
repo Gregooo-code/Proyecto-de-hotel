@@ -120,7 +120,7 @@ export const HotelActivitiesSection = () => {
     <section className="py-16 bg-white"> {/* Fondo blanco, limpio */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#020659] mb-4">Actividades</h2>
+          <h2 className="text-3xl font-bold text-[#0D0D0D] mb-4">Actividades</h2>
           <p className="text-lg text-[#0D0D0D]">
             Disfruta de una variedad de actividades para todas las edades y gustos.
           </p>
@@ -142,7 +142,7 @@ export const HotelActivitiesSection = () => {
                   <div className="p-2 bg-white rounded-full mr-3 border-2 border-[#F20C1F] shadow-sm">
                     {activity.icon}
                   </div>
-                  <h3 className="font-bold text-[#020659] text-xl">
+                  <h3 className="font-bold text-[#0D0D0D] text-xl">
                     {activity.name}
                   </h3>
                 </div>
@@ -171,7 +171,7 @@ export const HotelActivitiesSection = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-[#020659] text-sm mb-2">Destacados:</h4>
+                  <h4 className="font-semibold text-[#0D0D0D] text-sm mb-2">Destacados:</h4>
                   <ul className="text-xs text-[#0D0D0D] space-y-1">
                     {activity.highlights.slice(0, 3).map((item, index) => (
                       <li key={index} className="flex items-start">
@@ -187,7 +187,7 @@ export const HotelActivitiesSection = () => {
                     <span className="font-bold text-[#F20C1F]">
                       ${activity.price} USD
                     </span>
-                    <span className="text-xs bg-white text-[#020659] px-2 py-1 rounded-full border border-[#F20C1F]">
+                    <span className="text-xs bg-white text-[#0D0D0D] px-2 py-1 rounded-full border border-[#F20C1F]">
                       {activity.ageRestriction}
                     </span>
                   </div>

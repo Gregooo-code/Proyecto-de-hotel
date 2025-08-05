@@ -9,50 +9,50 @@ export const Header = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="text-white text-2xl font-bold hover:text-white/80 transition-colors"
+          className="text-white text-2xl font-bold hover:opacity-90 transition-opacity"
         >
           <img
-            src="/images/baywatch_logo.png" 
+            src="/images/baywatch_logo.png"
             alt="Bay Watch Logo"
             className="h-24 w-auto"
           />
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-3">
+        <nav className="hidden md:flex items-center space-x-8 bg-black/30 backdrop-blur-md rounded-full px-8 py-3 border border-white/20 shadow-lg">
           <Link
             to="/rooms-and-suites"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Habitaciones
           </Link>
           <Link
             to="/gastronomy"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Gastronomía
           </Link>
           <Link
             to="/services"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Servicios
           </Link>
           <Link
             to="/experiences"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Experiencias
           </Link>
           <Link
             to="/about-us"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Sobre Nosotros
           </Link>
           <Link
             to="/contact"
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-yellow-200 transition-colors duration-300 font-medium"
           >
             Contacto
           </Link>
@@ -62,17 +62,10 @@ export const Header = () => {
         <div className="flex items-center space-x-4">
           <Link
             to="/signin"
-            className="text-white hover:text-white/80 transition-colors hidden md:block"
+            className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full shadow-lg hover:from-red-500 hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             Iniciar Sesión
           </Link>
-          <Button
-            variant="outline"
-            className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Obtén la aplicación app
-          </Button>
         </div>
       </div>
     </header>
