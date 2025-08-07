@@ -1,93 +1,96 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowDown, Star, Users, Gift } from "lucide-react";
-
 export const RegisterHero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Fondo degradado animado - tonos diferentes para registro */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500">
-        {/* Elementos geométricos animados */}
-        <div className="absolute inset-0">
-          {/* Círculos flotantes */}
-          <div className="absolute top-16 left-16 w-40 h-40 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-32 right-24 w-56 h-56 bg-white/5 rounded-full blur-2xl animate-pulse delay-700"></div>
-          <div className="absolute bottom-24 left-40 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse delay-300"></div>
-          <div className="absolute bottom-32 right-16 w-28 h-28 bg-white/15 rounded-full blur-lg animate-pulse delay-1000"></div>
-          
-          {/* Estrellas flotantes */}
-          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-yellow-300/60 rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-pink-300/50 rounded-full animate-ping delay-500"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-2.5 h-2.5 bg-purple-300/40 rounded-full animate-ping delay-200"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-orange-300/60 rounded-full animate-ping delay-800"></div>
-          
-          {/* Formas adicionales para registro */}
-          <div className="absolute top-20 right-1/2 w-1 h-8 bg-white/20 rotate-45 animate-pulse delay-400"></div>
-          <div className="absolute bottom-40 left-1/2 w-6 h-1 bg-white/20 rotate-12 animate-pulse delay-600"></div>
-        </div>
-        
-        {/* Overlay con gradiente */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30"></div>
+    <section className="relative h-screen flex items-start justify-center pt-12 md:pt-20 overflow-hidden">
+      {/* Imagen de fondo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/imagen de login banner.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundAttachment: "fixed", // Opcional: da efecto parallax
+        }}
+      >
+        {/* Overlay degradado para legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80"></div>
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 px-6 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 px-6 max-w-5xl mx-auto text-center mt-16">
         {/* Icono principal */}
-        <div className="mb-8 flex justify-center">
+        <div
+          className={`mb-8 flex justify-center transform transition-all duration-1000 delay-200 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+        >
           <div className="relative">
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 shadow-2xl border border-white/30">
-              <Users className="w-10 h-10 text-white" />
+            <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-4 shadow-xl border border-[#F20C1F] hover:border-[#F20C0C] transition-all">
+              <Users className="w-10 h-10 text-[#F20C1F]" />
             </div>
-            <div className="absolute -top-2 -right-2">
-              <Star className="w-6 h-6 text-yellow-300 animate-pulse" />
+            <div className="absolute -top-2 -right-2 bg-white/20 rounded-full p-1 shadow-md">
+              <Star className="w-5 h-5 text-[#F2E205] animate-pulse" />
             </div>
-            <div className="absolute -bottom-1 -left-1">
-              <Gift className="w-5 h-5 text-pink-300 animate-bounce delay-500" />
+            <div className="absolute -bottom-1 -left-1 bg-white/20 rounded-full p-1 shadow-md">
+              <Gift className="w-4 h-4 text-[#F20C1F] animate-bounce delay-500" />
             </div>
           </div>
         </div>
 
         {/* Título principal */}
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight transform transition-all duration-1000 delay-400 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+        >
           <span className="block">Únete a</span>
-          <span className="block bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-[#F20C1F] to-[#F20C0C] bg-clip-text text-transparent">
             Nuestra Comunidad
           </span>
         </h1>
 
         {/* Subtítulo */}
-        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Crea tu cuenta y descubre un mundo de posibilidades. Únete a miles de usuarios que ya disfrutan de nuestros servicios
+        <p
+          className={`text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed transform transition-all duration-1000 delay-600 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+        >
+          Crea tu cuenta y descubre un mundo de posibilidades. Únete a miles de usuarios que ya disfrutan de nuestros servicios.
         </p>
 
         {/* Beneficios destacados */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Star className="w-6 h-6 text-white" />
+        <div
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-4xl mx-auto transform transition-all duration-1000 delay-800 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+        >
+          {[
+            { icon: Star, title: "Experiencia Premium", desc: "Acceso completo a todas las funcionalidades" },
+            { icon: Users, title: "Comunidad Activa", desc: "Conecta con usuarios de todo el mundo" },
+            { icon: Gift, title: "Beneficios Exclusivos", desc: "Ofertas especiales y descuentos únicos" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-[#F20C1F] hover:bg-white/15 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="w-12 h-12 bg-gradient-to-r from-[#F20C1F] to-[#F20C0C] rounded-xl flex items-center justify-center mx-auto mb-4">
+                <item.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-white font-semibold mb-2">{item.title}</h3>
+              <p className="text-white/80 text-sm">{item.desc}</p>
             </div>
-            <h3 className="text-white font-semibold mb-2">Experiencia Premium</h3>
-            <p className="text-white/80 text-sm">Acceso completo a todas las funcionalidades</p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-            <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Users className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Comunidad Activa</h3>
-            <p className="text-white/80 text-sm">Conecta con usuarios de todo el mundo</p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Gift className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Beneficios Exclusivos</h3>
-            <p className="text-white/80 text-sm">Ofertas especiales y descuentos únicos</p>
-          </div>
+          ))}
         </div>
 
         {/* Estadísticas rápidas */}
-        <div className="flex flex-wrap justify-center gap-8 mb-12">
+        <div
+          className={`flex flex-wrap justify-center gap-8 mb-10 transform transition-all duration-1000 delay-1000 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+        >
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-white mb-1">10K+</div>
             <div className="text-white/70 text-sm">Usuarios Activos</div>
@@ -103,33 +106,26 @@ export const RegisterHero = () => {
         </div>
 
         {/* Indicador de scroll */}
-        <div className="flex flex-col items-center">
-          <p className="text-white/70 text-sm mb-3 font-medium">Comienza tu registro</p>
+        <div
+          className={`flex flex-col items-center transform transition-all duration-1000 delay-1200 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            }`}
+        >
+          <p className="text-white/80 text-sm mb-3 font-medium">Comienza tu registro</p>
           <div className="animate-bounce">
-            <ArrowDown className="w-6 h-6 text-white/60" />
+            <ArrowDown className="w-6 h-6 text-[#F20C1F]" />
           </div>
         </div>
       </div>
 
-      {/* Elemento decorativo inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-purple-50 to-transparent"></div>
-      
-      {/* Ondas decorativas con colores diferentes */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-16">
-          <path 
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-            fill="#faf5ff"
-            className="opacity-50"
+      {/* Ondas decorativas */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-16">
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            fill="white"
+            className="opacity-10"
           />
         </svg>
-      </div>
-
-      {/* Partículas flotantes adicionales */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-10 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full opacity-60 animate-ping delay-1000"></div>
-        <div className="absolute top-1/4 right-20 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-50 animate-ping delay-1500"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-70 animate-ping delay-2000"></div>
       </div>
     </section>
   );

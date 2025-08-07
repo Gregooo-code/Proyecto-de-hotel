@@ -73,18 +73,23 @@ export const CulinaryExperiencesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {diningExperiences.map((experience) => (
-            <Card key={experience.id} className="overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <Card 
+              key={experience.id} 
+              className="h-full overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col"
+            >
               <img
                 src={experience.image}
                 alt={experience.name}
                 className="w-full h-48 object-cover"
               />
               
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{experience.name}</h3>
                   <span className="text-xl font-bold text-red-600">${experience.price}</span>
                 </div>
+
+                <p className="text-gray-600 mb-4">{experience.description}</p>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center text-gray-700">
@@ -105,6 +110,12 @@ export const CulinaryExperiencesSection = () => {
                       <span>Opción vegetariana</span>
                     </div>
                   )}
+                  {experience.isAlcoholIncluded && (
+                    <div className="flex items-center text-gray-700">
+                      <Wine className="w-5 h-5 mr-2 text-purple-500" />
+                      <span>Alcohol incluido</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="border-t border-gray-200 pt-4 mb-4">
@@ -118,18 +129,21 @@ export const CulinaryExperiencesSection = () => {
                   </ul>
                 </div>
 
-                <div className="flex space-x-3 mt-6">
-                  <Button variant="outline" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-100">
-                    Ver Detalles
-                  </Button>
-                  <Button className="flex-1 bg-red-600 hover:bg-red-700">
-                    Reservar Ahora
-                  </Button>
-                </div>
+                {/* Contenedor que empuja los botones hacia abajo */}
+                <div className="mt-auto">
+                  <div className="flex space-x-3">
+                    <Button variant="outline" className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-100">
+                      Ver Detalles
+                    </Button>
+                    <Button className="flex-1 bg-red-600 hover:bg-red-700">
+                      Reservar Ahora
+                    </Button>
+                  </div>
 
-                <div className="mt-4 pt-4 border-t border-gray-200 text-xs text-gray-500 flex justify-between">
-                  <span>Cancelación gratuita</span>
-                  <span>Sin prepago</span>
+                  <div className="mt-4 pt-4 border-t border-gray-200 text-xs text-gray-500 flex justify-between">
+                    <span>Cancelación gratuita</span>
+                    <span>Sin prepago</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
